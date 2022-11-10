@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css"/>
+    <title>Sivu 1</title>
+</head>
+<body class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1 style="text-decoration: none;">Sivu 1</h1>
+        </div>
+        <div class="col-6"><ul>
+            <li><a href="index.html" class="nappi" target="_self">Etusivu</a>
+                <a href="sivu1.html" class="nappi" target="_self">Sivu 1</a>
+                <a href="sivu2.html" class="nappi" target="_self">Sivu 2</a>
+            </li>
+          </ul></div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+           <h2>Päärynä</h2>
+           <p>Päärynä (Pyrus communis) on hedelmäpuuna viljelty ruusukasvien (Rosaceae) heimoon kuuluva puu, 
+            joka on läheistä sukua omenapuille (Malus). Päärynäpuu eroaa omenapuista suippokärkisten lehtien, 
+            huiskilokukinnon, valkoisten kukkien, 
+            kokonaan erillisten vartaloiden ja latvapuoleltaan tyvipuolta turpeamman hedelmän kautta.</p>
+        </div>
+        <div class="col-6" style="text-align: center;">
+            <div>
+                <button id="pysayta" class="nappi" type="button">Pysäytä päärynä</button> 
+            </div>
+            <div style="padding-top: 20px;">
+                <img src="img/pear.png" alt="pyörivä päärynä" class="rotate pear" data-animation="stop">
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const pysayta = document.getElementById('pysayta');
+            pysayta.addEventListener('click', () => {
+                const animations = document.querySelectorAll('[data-animation]');
+            animations.forEach(animation => {
+                const running = animation.style.animationPlayState || 'running';
+                animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
+                })
+            });
+    </script>
+</body>
+</html>
